@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ / [QSA,L,R=301]
+
+# charset: utf-8
+AddType "text/html; charset=UTF-8" .html
+AddDefaultCharset UTF-8
+
+# custom headers
+Header set Server "natsume"
+Header set Strict-Transport-Security "max-age=31536000"
+Header set X-Powered-By "natsume"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set X-Turbo-Charged-By "mochimochi"
+Header set X-XSS-Protection "1; mode=block"
