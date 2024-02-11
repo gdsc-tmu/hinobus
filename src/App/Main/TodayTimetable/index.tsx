@@ -83,7 +83,7 @@ export default React.memo((props: TodayTimetableProps) => {
                           setOpen(m ? true : false);
                         }}
                       >
-                        {pad(m)}
+                        {m === void 0 ? "" : pad(m)}
                       </Mui.Typography>
                     ))(timetable.timetable[h]?.[col]?.[0])}
                   </Mui.TableCell>
