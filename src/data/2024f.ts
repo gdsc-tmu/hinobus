@@ -91,7 +91,7 @@ const hino = Service.createTimetable({
       [30, [6]],
     ],
     18: [
-      [10, []],
+      [5, []],
       [30, [7]],
     ],
   },
