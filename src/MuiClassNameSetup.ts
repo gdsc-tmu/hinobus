@@ -6,7 +6,7 @@ class ClassNameGenerator {
 
   static get(componentName: string): string {
     return (this.classNames[componentName] ??=
-      "natsume-" + hash(componentName.slice(3)).toString(36));
+      "gdsc-" + hash(componentName.slice(3)).toString(36));
   }
 }
 
