@@ -47,8 +47,9 @@ class Service {
   /**
    * @description
    * 7: the last departure
+   * 10: 2 cars run side by side
    */
-  public static readonly notes = [1, 2, 3, 4, 5, 6, 7] as const;
+  public static readonly notes = [1, 2, 3, 4, 5, 6, 7, 10] as const;
 
   public static readonly busStops = ["hino", "minao"] as const;
 

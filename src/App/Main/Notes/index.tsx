@@ -28,7 +28,8 @@ export default React.memo((props: NotesProps) => {
             .flat(2);
 
           const isLast = note.includes(7);
-          const periods = note.filter((e) => e !== 7);
+          const periods = note.filter((e) => e < 7);
+          const isParallel = note.includes(10);
 
           return note.length ? (
             <>
@@ -39,14 +40,16 @@ export default React.memo((props: NotesProps) => {
                 <time dateTime={time}>{time}</time>
               ))([h, m].map((e) => pad(e)).join(":"))}
               <Space />は
-              {isLast && "本日の最終便で" + (periods.length ? "あり，" : "す")}
-              {periods.length > 0 && (
+              {isLast &&
+                "本日の最終便で" + (periods.length ? "あり，" : "す．")}
+              {0 < periods.length && (
                 <>
                   <Space />
                   {periods.map((e) => e + " 限").join("および") +
-                    "に間に合う最後の便です"}
+                    "に間に合う最後の便です．"}
                 </>
               )}
+              {isParallel && " 2 台並走します．"}
             </>
           ) : (
             void 0
@@ -59,7 +62,7 @@ export default React.memo((props: NotesProps) => {
   return messages.length ? (
     <Article title="備考">
       <Mui.List disablePadding>
-        {messages.map((message, i) => (
+        {messages.flat().map((message, i) => (
           <Mui.ListItem key={i} disablePadding>
             <Mui.ListItemIcon>
               <Icon.Info />
