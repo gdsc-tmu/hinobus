@@ -8,7 +8,7 @@ import ShareButton from "./ShareButton";
 
 const openTwitter = () => {
   window.open(
-    "https://twitter.com/compose/tweet?text=%E6%97%A5%E9%87%8E%E3%83%90%E3%82%B9%E6%99%82%E5%88%BB%E8%A1%A8%20-%20https://hinobus.natsume.tech/"
+    "https://x.com/compose/post?text=%E6%97%A5%E9%87%8E%E3%83%90%E3%82%B9%E6%99%82%E5%88%BB%E8%A1%A8%20%0D%0Ahttps://hinobus.natsume.tech/"
   );
 };
 
