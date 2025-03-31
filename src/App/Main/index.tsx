@@ -9,6 +9,7 @@ import type {
   MonthString,
   DayString,
 } from "src/data/DateString";
+
 import { type Hours, type Minutes, pad } from "src/data/Time";
 import service from "src/data/currentService";
 
@@ -18,9 +19,7 @@ import BlinkingColon from "./BlinkingColon";
 import DepartureSign from "./DepartureSign";
 import Notes from "./Notes";
 import TodayTimetable from "./TodayTimetable";
-import Links from "./Links";
-import News from "./News";
-import ShareThis from "./ShareThis";
+import Aside from "./Aside";
 
 const hinoColor = Mui.colors.teal[800];
 const minaoColor = Mui.colors.pink[800];
@@ -194,9 +193,11 @@ export default React.memo(() => {
 
       {pattern === void 0 ? (
         <Mui.Container sx={{ py: 3, maxWidth: 1080, marginX: "auto" }}>
-          <Mui.Typography component="p">
+          <Mui.Typography component="p" textAlign="center" pb={5}>
             指定された日時の時刻表データは存在しません
           </Mui.Typography>
+
+          <Aside />
         </Mui.Container>
       ) : (
         <>
@@ -259,11 +260,8 @@ export default React.memo(() => {
                   hours={currentHours}
                 />
               </Mui.Grid>
-              <Mui.Grid item md xs={12}>
-                <News />
-                <Links />
-                <ShareThis />
-              </Mui.Grid>
+
+              <Aside />
             </Mui.Grid>
           </Mui.Container>
         </>
