@@ -35,6 +35,7 @@ const pattern: Pattern = {
   // exam or intensive lecture days
   ...Object.fromEntries(
     (function* () {
+      const dayWisePatterns = [0, 1, 1, 1, 1, 1, 0];
       const startDate = new Date("2025-08-06");
       const endDate = new Date("2025-09-12");
 
@@ -43,9 +44,10 @@ const pattern: Pattern = {
         date <= endDate;
         date.setDate(date.getDate() + 1)
       ) {
+        const day = date.getDay();
         const key = date.toISOString().replace(/T.+/, "");
 
-        yield [key, 1];
+        yield [key, dayWisePatterns[day]];
       }
     })()
   ),
