@@ -9,7 +9,7 @@ export interface ShareButtonProps {
 
 export default React.memo((props: ShareButtonProps) => {
   return (
-    <Mui.Tooltip title="Twitter">
+    <Mui.Tooltip title={props.title}>
       <Mui.IconButton size="large" onClick={props.onClick}>
         {props.icon}
       </Mui.IconButton>
